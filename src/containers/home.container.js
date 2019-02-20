@@ -5,7 +5,7 @@ class Home extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <div className="text-center bg-light">
+        <div className="text-center bg-light shadow-sm rounded">
           <div className="col-md-12 p-lg-5 mx-auto my-5">
             <h1 className="display-4 font-weight-normal">Welcome to React-Redux-App</h1>
             <p className="lead font-weight-normal text-justify text-center">

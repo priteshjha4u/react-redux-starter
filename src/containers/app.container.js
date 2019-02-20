@@ -4,11 +4,14 @@ import '../assets/css/app.css';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Navigation from '../components/nav.component';
 import Home from '../containers/home.container';
+import Spinner from '../components/spinner.component';
 
 // lazy loaded components
 const Notfound = lazy(() => import('../components/404.component'));
 const TodoApp = lazy(() => import('../containers/todo.container'));
+const VirtualKeyboard = lazy(() => import('../containers/keyboard.container'));
 
+// root app component
 class App extends Component {
   render() {
     return (
@@ -16,12 +19,13 @@ class App extends Component {
         <React.Fragment>
           <Navigation />
           <div className="container-fluid p-3">
-            <Suspense fallback={<h2 className="text-center mt-2">Loading...</h2>}>
+            <Suspense fallback={<Spinner />}>
               <Switch>
-                <Route path="/" exact render={() => <Home />} />
-                <Route path="/home" render={() => <Home />} />
-                <Route path="/todo" render={() => <TodoApp />} />
-                <Route render={() => <Notfound />} />
+                <Route path="/" exact render={props => <Home {...props} />} />
+                <Route path="/home" render={props => <Home {...props} />} />
+                <Route path="/todo" render={props => <TodoApp {...props} />} />
+                <Route path="/virtual-keyboard/:example?" render={props => <VirtualKeyboard {...props} />} />
+                <Route render={props => <Notfound {...props} />} />
               </Switch>
             </Suspense>
           </div>

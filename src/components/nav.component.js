@@ -78,7 +78,7 @@ class Navigation extends Component {
                 <Link className="dropdown-item" to="/virtual-keyboard/three">
                   Example Three
                 </Link>
-                <Link className="dropdown-item" to="/virtual-keyboard/three">
+                <Link className="dropdown-item" to="/virtual-keyboard/four">
                   Example Four
                 </Link>
               </div>
