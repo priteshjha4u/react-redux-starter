@@ -24,5 +24,15 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "author": {
+    "name": "Pritesh Jha",
+    "email": "priteshjha4u@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/priteshjha4u/react-redux-starter"
+  },
+  "homepage": "https://priteshjha4u.github.io/react-redux-starter",
+  "license": "MIT"
 }

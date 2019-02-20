@@ -4,7 +4,8 @@ import { Link, withRouter } from 'react-router-dom';
 class Navigation extends Component {
   state = {
     currentPath: '',
-    dropdown: { keyboard: false }
+    dropdown: { keyboard: false },
+    navToogler: false
   };
 
   clearHistoryListener = null;
@@ -13,7 +14,7 @@ class Navigation extends Component {
     document.addEventListener('click', this.docClick);
     this.setState({ currentPath: this.props.location.pathname }, () => {
       this.clearHistoryListener = this.props.history.listen(loc => {
-        this.setState({ currentPath: loc.pathname });
+        this.setState({ currentPath: loc.pathname, navToogler: false });
       });
     });
   }
@@ -35,17 +36,25 @@ class Navigation extends Component {
   }
 
   render() {
-    const { dropdown, currentPath } = this.state;
+    const { dropdown, currentPath, navToogler } = this.state;
     return (
       <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <Link className="navbar-brand" to="/home">
-          React-Redux-App
+          React-Redux-Starter
         </Link>
-        <button className="navbar-toggler" type="button">
+        <button
+          className="navbar-toggler"
+          type="button"
+          onClick={() => {
+            this.setState(state => {
+              return { navToogler: !state.navToogler };
+            });
+          }}
+        >
           <span className="navbar-toggler-icon" />
         </button>
 
-        <div className="collapse navbar-collapse">
+        <div className={`collapse navbar-collapse ${navToogler ? 'show' : ''}`}>
           <ul className="navbar-nav mr-auto">
             <li className={`nav-item ${currentPath === '/home' || currentPath === '/' ? 'active' : ''}`}>
               <Link className="nav-link" to="/home">

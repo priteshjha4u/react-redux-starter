@@ -6,7 +6,7 @@ import Navigation from '../components/nav.component';
 import Home from '../containers/home.container';
 import Spinner from '../components/spinner.component';
 
-// lazy loaded components
+// lazy loaded containers and components
 const Notfound = lazy(() => import('../components/404.component'));
 const TodoApp = lazy(() => import('../containers/todo.container'));
 const VirtualKeyboard = lazy(() => import('../containers/keyboard.container'));
