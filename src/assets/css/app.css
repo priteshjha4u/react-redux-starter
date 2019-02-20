@@ -1,0 +1,16 @@
+body {
+  padding-top: 3.5rem;
+}
+.rmv {
+  margin-left: 10px;
+}
+.infobg {
+  background: #d9edf7;
+}
+.strk {
+  text-decoration: line-through;
+  background: #dff0d8;
+}
+.leftBtn {
+  margin-left: 10px;
+}
