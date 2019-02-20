@@ -10,6 +10,7 @@ import Spinner from '../components/spinner.component';
 const Notfound = lazy(() => import('../components/404.component'));
 const TodoApp = lazy(() => import('../containers/todo.container'));
 const VirtualKeyboard = lazy(() => import('../containers/keyboard.container'));
+const Login = lazy(() => import('../components/login.component'));
 
 // root app component
 class App extends Component {
@@ -25,6 +26,7 @@ class App extends Component {
                 <Route path="/home" render={props => <Home {...props} />} />
                 <Route path="/todo" render={props => <TodoApp {...props} />} />
                 <Route path="/virtual-keyboard/:example?" render={props => <VirtualKeyboard {...props} />} />
+                <Route path="/login" render={props => <Login {...props} />} />
                 <Route render={props => <Notfound {...props} />} />
               </Switch>
             </Suspense>

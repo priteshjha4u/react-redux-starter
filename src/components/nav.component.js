@@ -88,12 +88,16 @@ class Navigation extends Component {
                 404
               </Link>
             </li>
-            <li className={`nav-item ${currentPath === '/login' ? 'active' : ''}`}>
-              <Link className="nav-link" to="/login">
-                Login
-              </Link>
-            </li>
           </ul>
+          <span
+            className="btn btn-info btn-sm"
+            style={{ cursor: 'pointer' }}
+            onClick={() => {
+              this.props.history.push('/login');
+            }}
+          >
+            Login
+          </span>
         </div>
       </nav>
     );
