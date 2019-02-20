@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ls from '../../services/lshelper';
+import storage from '../../services/storage.service';
 import TodoListItem from './TodoListItem';
 import TodoForm from './TodoForm';
 
@@ -17,11 +17,11 @@ class TodoApp extends Component {
   }
 
   loadTodos() {
-    this.setState({ data: ls.getTodos() });
+    this.setState({ data: storage.getTodos() });
   }
 
   handleFormSubmit(d) {
-    let r = ls.saveTodo(d);
+    let r = storage.saveTodo(d);
     if (r.saved) {
       this.loadTodos();
     } else {
@@ -36,12 +36,12 @@ class TodoApp extends Component {
       val.id === id && (x = index);
       val.id === id && du && (!name ? (val.done = 'true') : (val.text = name));
     });
-    du && (this.setState({ data: d }), ls.saveTodo(d, true)); // eslint-disable-line no-unused-expressions
-    x >= 0 && !du && d.splice(x, 1) && (this.setState({ data: d }), ls.saveTodo(d, true)); // eslint-disable-line no-unused-expressions
+    du && (this.setState({ data: d }), storage.saveTodo(d, true)); // eslint-disable-line no-unused-expressions
+    x >= 0 && !du && d.splice(x, 1) && (this.setState({ data: d }), storage.saveTodo(d, true)); // eslint-disable-line no-unused-expressions
   }
 
   render() {
-    if (!ls.localStorageExists) {
+    if (!storage.localStorageExists) {
       return <div className="alert alert-danger">Your browser do not support Local Storage. Please use any modern browser.</div>;
     }
     const todoList = this.state.data.map((t, i) => {
