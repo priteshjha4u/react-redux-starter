@@ -27,7 +27,7 @@ In order to use react-redux-starter, follow below steps:
 
 ## Demo
 
-[Click here](https://priteshjha4u.github.io/react-virtual-keyboard/) to see running demo.
+[Click here](https://priteshjha4u.github.io/react-redux-starter/) to see running demo.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

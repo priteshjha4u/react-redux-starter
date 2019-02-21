@@ -25,6 +25,13 @@ class KeyboardContainer extends React.Component {
     return (
       <div className="row mt-5">
         <div className="col-md-12">
+          <div className="alert alert-info shadow-lg rounded mb-2">
+            To learn more about react virtual keyboard component, please{' '}
+            <a className="btn btn-success btn-sm" href="https://github.com/priteshjha4u/react-virtual-keyboard" target="_blank">
+              click here
+            </a>
+          </div>
+          ;
           <div className="row justify-content-center align-items-center">
             <div className="card">
               <div className="card-body">
