@@ -1,0 +1,43 @@
+import { ActionTypes } from './action';
+
+const initialState = {
+  isAuthenticated: false,
+  isLoading: false,
+  info: {
+    userDetails: null,
+    error: null
+  }
+};
+
+const authReducer = (state = initialState, action) => {
+  const { type } = action;
+  switch (type) {
+    case ActionTypes.LOGIN_START:
+      return {
+        ...state,
+        isLoading: true
+      };
+    case ActionTypes.LOGIN_SUCCESS:
+      return {
+        ...state,
+        isLoading: false,
+        info: {
+          userDetails: action.payload.data,
+          error: null
+        }
+      };
+    case ActionTypes.LOGIN_FAIL:
+      return {
+        ...state,
+        isLoading: false,
+        info: {
+          userDetails: null,
+          error: action.payload.error
+        }
+      };
+    default:
+      return state;
+  }
+};
+
+export default authReducer;
