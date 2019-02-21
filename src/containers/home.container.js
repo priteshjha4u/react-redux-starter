@@ -13,13 +13,17 @@ class Home extends React.Component {
               This app uses few other powerful tools as part of react ecosystem. <br />
               This can be a starter boilerplate. which one can use to kick start a react-redux app.
               <br />
-              Following are the features this app provides.
+              Following are some of the features this app provides.
             </p>
             <div className="row justify-content-center align-items-center">
               <ul className="text-left">
                 <li>Bootstrap version 4 has been used for markup purpose.</li>
                 <li>Routing implemented using react-router library.</li>
                 <li>State management using react-redux library.</li>
+                <li>Lazy loading or code spliting has been implemented.</li>
+                <li>Example of route with optional parameter is implemented.</li>
+                <li>Example of nested routing is implemented.</li>
+                <li>Simple login and logout implemented using redux store.</li>
               </ul>
             </div>
           </div>

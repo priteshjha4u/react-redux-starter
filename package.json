@@ -1,5 +1,5 @@
 {
-  "name": "react-redux-app",
+  "name": "react-redux-starter",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -34,5 +34,8 @@
     "url": "https://github.com/priteshjha4u/react-redux-starter"
   },
   "homepage": "https://priteshjha4u.github.io/react-redux-starter",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "gh-pages": "^2.0.1"
+  }
 }

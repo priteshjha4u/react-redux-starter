@@ -1,16 +1,32 @@
-# React Virtual keyboard
-This is a super lightweight virtual keyboard built with react. can be used in any web application.
+# React Redux Starter App
 
-**Note: this is a still a work in progress!**
+Hi there, this is a simple app bootstraped using creat-react-app.
+This app uses few other powerful tools as part of react ecosystem.
+This can be a starter boilerplate. which one can use to kick start a react-redux app.
+
+## Following are some of the features this app provides.
+
+- Bootstrap 4 has been used for markup purpose.
+- Routing implemented using react-router library.
+- State management using react-redux library.
+- Lazy loading or code spliting has been implemented.
+- Example of route with optional parameter is implemented.
+- Example of nested routing is implemented.
+- Simple login and logout implemented using redux store.
+
+**Note: this is still a work in progress!**
 
 ## How to use
-This repo contains demo files as well as the react virtual component files.
-In order to use react virtual component in you react application, follow below steps:
+
+This repo contains each and every thing you need to get started.
+In order to use react-redux-starter, follow below steps:
+
 - clone this repo
-- copy `ReactVirtualKeyboard.js` and `ReactVirtualKeyboard.css` to your working directory or however you want to use.
-- about how to use keyboard compoent inside your code, see the `index.js` and any file inside `examples/example-*`.
+- modify directory structure, individual files, components etc as per you need.
+- At last, visit create-react-app official page for more info. Link provided below.
 
 ## Demo
+
 [Click here](https://priteshjha4u.github.io/react-virtual-keyboard/) to see running demo.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

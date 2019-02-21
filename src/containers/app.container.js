@@ -2,6 +2,8 @@ import React, { Component, Suspense, lazy } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../assets/css/app.css';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+
+// These components will be part of initial app loading
 import Navigation from '../components/nav.component';
 import Home from '../containers/home.container';
 import Spinner from '../components/spinner.component';
