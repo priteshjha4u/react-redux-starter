@@ -27,6 +27,7 @@ In order to use react-redux-starter, follow below steps:
 
 ## Demo
 
+**Note: This app has originally used browser router or HTML5 history api for routing and since the app is hosted on github.io which does not support browser routing properly. hence for demo purpose only the routing mechanism changed from browser router to hash router. !**
 [Click here](https://priteshjha4u.github.io/react-redux-starter/) to see running demo.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

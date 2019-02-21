@@ -1,7 +1,7 @@
 import React, { Component, Suspense, lazy } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../assets/css/app.css';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 
 // These components will be part of initial app loading
 import Navigation from '../components/nav.component';
@@ -18,7 +18,7 @@ const Login = lazy(() => import('../components/login.component'));
 class App extends Component {
   render() {
     return (
-      <BrowserRouter>
+      <Router>
         <React.Fragment>
           <Navigation />
           <div className="container-fluid p-3">
@@ -34,7 +34,7 @@ class App extends Component {
             </Suspense>
           </div>
         </React.Fragment>
-      </BrowserRouter>
+      </Router>
     );
   }
 }

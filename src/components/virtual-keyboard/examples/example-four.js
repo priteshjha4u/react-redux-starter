@@ -109,7 +109,7 @@ class Example extends Component {
             </div>
           </div>
           <div className="row h-100 justify-content-center align-items-center px-2 py-2">
-            <div className={window.innerWidth > 600 ? 'w-25 p-3' : ''}>
+            <div className={window.innerWidth > 800 ? 'w-25 p-3' : ''}>
               <ReactVirtualKeyboard updateHandler={this.update} input={currentInputElement} options={{ onlyNumeric: true }} />
             </div>
           </div>
