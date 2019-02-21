@@ -18,6 +18,11 @@ class Example extends Component {
   handleChange = e => {
     this.setState({ action: e.target.value });
   };
+  componentWillUnmount() {
+    if (this.timeout) {
+      clearTimeout(this.timeout);
+    }
+  }
   render() {
     const { model, currentInputElement, answer } = this.state;
     return (
