@@ -24,13 +24,13 @@ class App extends Component {
         <React.Fragment>
           <Navigation {...this.props} />
           <div className="container-fluid p-3">
-            <Suspense fallback={<Spinner />}>
+            <Suspense fallback={<Spinner cls="mt-5" />}>
               <Switch>
                 <Route path="/" exact render={props => <Home {...props} />} />
                 <Route path="/home" render={props => <Home {...props} />} />
                 <Route path="/todo" render={props => <TodoApp {...props} />} />
                 <Route path="/virtual-keyboard/:example?" render={props => <VirtualKeyboard {...props} />} />
-                <Route path="/login" render={props => <Login {...props} />} />
+                <Route path="/login" render={props => <Login {...props} {...this.props} />} />
                 <Route render={props => <Notfound {...props} />} />
               </Switch>
             </Suspense>

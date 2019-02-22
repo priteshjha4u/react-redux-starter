@@ -18,6 +18,7 @@ import { sampleUser } from '../constants/mock.data';
 }; */
 
 export const fakeLogin = async (username, password) => {
+  let result;
   const checkUser = (u, p) => {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
@@ -29,7 +30,10 @@ export const fakeLogin = async (username, password) => {
       }, 3000);
     });
   };
-
-  const result = await checkUser(username, password);
+  try {
+    result = await checkUser(username, password);
+  } catch (e) {
+    result = e;
+  }
   return result;
 };
