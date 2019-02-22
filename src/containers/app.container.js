@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../assets/css/app.css';
 // Use BrowserRouter when the hosting server is properly configured.
-import { BrowserRouter /* HashRouter */ as Router, Switch, Route } from 'react-router-dom';
+import { /* BrowserRouter */ HashRouter as Router, Switch, Route } from 'react-router-dom';
 
 // These components will be part of initial app loading
 import Navigation from '../components/nav.component';
