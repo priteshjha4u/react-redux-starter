@@ -6,7 +6,7 @@ const initialState = {
   allUsers: null
 };
 
-const uiStateReducer = (state = initialState, action) => {
+const mockReducer = (state = initialState, action) => {
   const { type } = action;
   switch (type) {
     case ActionTypes.FETCH_ALL_USERS:
@@ -32,4 +32,4 @@ const uiStateReducer = (state = initialState, action) => {
   }
 };
 
-export default uiStateReducer;
+export default mockReducer;

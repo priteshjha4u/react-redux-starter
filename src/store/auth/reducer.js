@@ -3,10 +3,8 @@ import { ActionTypes } from './action';
 const initialState = {
   isAuthenticated: false,
   isLoading: false,
-  info: {
-    userDetails: null,
-    error: null
-  }
+  userDetails: null,
+  error: null
 };
 
 const authReducer = (state = initialState, action) => {
@@ -21,19 +19,15 @@ const authReducer = (state = initialState, action) => {
       return {
         ...state,
         isLoading: false,
-        info: {
-          userDetails: action.payload.data,
-          error: null
-        }
+        isAuthenticated: true,
+        userDetails: action.payload.data,
+        error: null
       };
     case ActionTypes.LOGIN_FAIL:
       return {
         ...state,
         isLoading: false,
-        info: {
-          userDetails: null,
-          error: action.payload.error
-        }
+        error: action.payload.error
       };
     default:
       return state;
