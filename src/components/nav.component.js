@@ -124,7 +124,7 @@ class Navigation extends Component {
               </button>
               <div className={`dropdown-menu ${dropdown.user ? 'show' : ''} ${window.innerWidth < 700 ? '' : 'logout'}`}>
                 <span className="dropdown-item" onClick={() => this.navAction('logout')}>
-                  Logoutasdasdadsadsasd
+                  Logout
                 </span>
               </div>
             </div>
