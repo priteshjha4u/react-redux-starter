@@ -45,3 +45,12 @@ body {
 .leftBtn {
   margin-left: 10px;
 }
+.navbar .kspan,
+.navbar .loginbtn,
+.navbar .dropdown-item {
+  cursor: pointer;
+}
+.navbar .logout {
+  left: auto;
+  right: 0;
+}

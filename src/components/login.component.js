@@ -29,20 +29,11 @@ class Login extends React.Component {
           <form className="form-signin" onSubmit={this.submit} style={{ marginTop: '10%' }}>
             <img className="mb-4" src={cat} alt="" width="50" height="50" style={{ marginLeft: '40%' }} />
             <h1 className="h3 mb-3 font-weight-normal text-center">Please sign in</h1>
+            <p className="text-center">(username: admin, password: admin)</p>
             <label htmlFor="inputEmail" className="sr-only">
               Email address
             </label>
-            <input
-              type="text"
-              name="username"
-              id="inputEmail"
-              className="form-control"
-              placeholder="Email address"
-              required
-              autoFocus
-              value={username}
-              onChange={this.handleChange}
-            />
+            <input type="text" name="username" id="inputEmail" className="form-control" placeholder="Username" required autoFocus value={username} onChange={this.handleChange} />
             <label htmlFor="inputPassword" className="sr-only">
               Password
             </label>
@@ -51,11 +42,7 @@ class Login extends React.Component {
               Sign in
             </button>
             {authInfo.isLoading && <Spinner cls="mt-4" />}
-            {!authInfo.isLoading && authInfo.error && (
-              <div className="row justify-content-center align-items-center mt-4">
-                <div className="alert alert-danger">{authInfo.error.message}</div>
-              </div>
-            )}
+            {!authInfo.isLoading && authInfo.error && <div className="alert alert-danger mt-3">{authInfo.error.message}</div>}
           </form>
         </div>
       </div>

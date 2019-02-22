@@ -41,7 +41,7 @@ class ExampleThree extends Component {
             </div>
           </div>
           <div className="row h-100 justify-content-center align-items-center px-2 py-2">
-            <div className={window.innerWidth > 800 ? 'w-75 p-3' : ''}>
+            <div className={window.innerWidth > 800 ? 'w-75 p-3' : 'w-100'}>
               <ReactVirtualKeyboard updateHandler={this.update} input={currentInputElement} />
             </div>
           </div>

@@ -33,3 +33,7 @@ const loginFail = error => ({
   type: ActionTypes.LOGIN_FAIL,
   payload: { error }
 });
+
+export const logout = () => ({
+  type: ActionTypes.LOGOUT
+});

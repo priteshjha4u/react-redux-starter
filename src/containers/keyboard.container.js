@@ -26,7 +26,7 @@ class KeyboardContainer extends React.Component {
       <div className="row mt-3">
         <div className="col-md-12">
           <div className="row justify-content-center align-items-center mb-4">
-            <div className="font-weight-bold">
+            <div className="font-weight-bold text-center">
               To learn more about react virtual keyboard component, please{' '}
               <a className="btn btn-success btn-sm" rel="noopener noreferrer" href="https://github.com/priteshjha4u/react-virtual-keyboard" target="_blank">
                 click here
