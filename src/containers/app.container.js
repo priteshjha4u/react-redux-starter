@@ -1,4 +1,5 @@
 import React, { Component, Suspense, lazy } from 'react';
+import { connect } from 'react-redux';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../assets/css/app.css';
 // Use BrowserRouter when the hosting server is properly configured.
@@ -18,6 +19,7 @@ const Login = lazy(() => import('../components/login.component'));
 // root app component
 class App extends Component {
   render() {
+    console.log('app', this.props);
     return (
       <Router>
         <React.Fragment>
@@ -40,4 +42,11 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {
+    uiInfo: state.uiState,
+    authInfo: state.auth
+  };
+};
+
+export default connect(mapStateToProps)(App);

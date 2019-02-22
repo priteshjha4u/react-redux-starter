@@ -11,6 +11,7 @@ class Navigation extends Component {
   clearHistoryListener = null;
 
   componentDidMount() {
+    console.log(this.props);
     document.addEventListener('click', this.docClick);
     this.setState({ currentPath: this.props.location.pathname }, () => {
       this.clearHistoryListener = this.props.history.listen(loc => {

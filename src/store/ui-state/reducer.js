@@ -10,7 +10,7 @@ const uiStateReducer = (state = initialState, action) => {
     case ActionTypes.SET_SELECTED_MENU:
       return {
         ...state,
-        selectedMenu: action.payload.value
+        selectedMenu: action.payload.data
       };
     default:
       return state;
