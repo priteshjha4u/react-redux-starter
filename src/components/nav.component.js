@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import { setSelectedMenu } from '../store/ui-state/action';
 
 class Navigation extends Component {
   state = {
-    currentPath: '',
     dropdown: { keyboard: false },
     navToogler: false
   };
@@ -11,11 +11,13 @@ class Navigation extends Component {
   clearHistoryListener = null;
 
   componentDidMount() {
-    console.log(this.props);
     document.addEventListener('click', this.docClick);
     this.setState({ currentPath: this.props.location.pathname }, () => {
       this.clearHistoryListener = this.props.history.listen(loc => {
-        this.setState({ currentPath: loc.pathname, navToogler: false });
+        this.props.dispatch(setSelectedMenu(loc.pathname));
+        if (this.state.navToogler === true) {
+          this.setState({ navToogler: false });
+        }
       });
     });
   }
@@ -37,7 +39,8 @@ class Navigation extends Component {
   }
 
   render() {
-    const { dropdown, currentPath, navToogler } = this.state;
+    const { dropdown, navToogler } = this.state;
+    const { currentPath } = this.props.uiInfo;
     return (
       <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <Link className="navbar-brand" to="/home">
@@ -69,7 +72,7 @@ class Navigation extends Component {
             </li>
 
             <li
-              className={`nav-item dropdown ${dropdown.keyboard ? 'show' : ''}`}
+              className={`nav-item dropdown ${currentPath.indexOf('keyboard') > -1 ? 'active' : ''} ${dropdown.keyboard ? 'show' : ''}`}
               onClick={e => {
                 e.stopPropagation();
                 return this.setState({ dropdown: { keyboard: true } });

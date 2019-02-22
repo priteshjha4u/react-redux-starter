@@ -1,7 +1,7 @@
 import { ActionTypes } from './action';
 
 const initialState = {
-  selectedMenu: ''
+  currentPath: '/'
 };
 
 const uiStateReducer = (state = initialState, action) => {
@@ -10,7 +10,7 @@ const uiStateReducer = (state = initialState, action) => {
     case ActionTypes.SET_SELECTED_MENU:
       return {
         ...state,
-        selectedMenu: action.payload.data
+        currentPath: action.payload.data
       };
     default:
       return state;

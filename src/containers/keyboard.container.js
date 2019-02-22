@@ -17,16 +17,16 @@ class KeyboardContainer extends React.Component {
       case 'four':
         return <ExampleFour />;
       default:
-        return <div className="alert alert-info shadow-lg rounded">Hi there, please click on one of the example button to see virtual keyboard component in action.</div>;
+        return <div className="alert alert-info">Hi there, please click on one of the example button to see virtual keyboard component in action.</div>;
     }
   }
   render() {
     const { params } = this.props.match;
     return (
-      <div className="row mt-5">
+      <div className="row mt-3">
         <div className="col-md-12">
-          <div className="row justify-content-center align-items-center mb-4">
-            <div className="alert alert-info shadow-lg rounded">
+          <div className="row justify-content-center align-items-center mb-3">
+            <div className="font-weight-bold">
               To learn more about react virtual keyboard component, please{' '}
               <a className="btn btn-success btn-sm" rel="noopener noreferrer" href="https://github.com/priteshjha4u/react-virtual-keyboard" target="_blank">
                 click here
@@ -34,7 +34,7 @@ class KeyboardContainer extends React.Component {
             </div>
           </div>
           <div className="row justify-content-center align-items-center">
-            <div className="card shadow-lg rounded">
+            <div className="card">
               <div className="card-body">
                 <Link className={`btn btn-outline-primary ml-2 mb-2 ${params.example === 'one' ? 'active' : ''}`} to="/virtual-keyboard/one">
                   Example One
@@ -51,7 +51,7 @@ class KeyboardContainer extends React.Component {
               </div>
             </div>
           </div>
-          <div className="row justify-content-center align-items-center mt-5 px-5">{this.renderExample(params.example)}</div>
+          <div className="row justify-content-center align-items-center mt-3 px-5">{this.renderExample(params.example)}</div>
         </div>
       </div>
     );

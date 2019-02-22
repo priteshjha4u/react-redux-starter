@@ -3,14 +3,14 @@ import { connect } from 'react-redux';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../assets/css/app.css';
 // Use BrowserRouter when the hosting server is properly configured.
-import { /* BrowserRouter */ HashRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter /* HashRouter */ as Router, Switch, Route } from 'react-router-dom';
 
 // These components will be part of initial app loading
 import Navigation from '../components/nav.component';
-import Home from '../containers/home.container';
 import Spinner from '../components/spinner.component';
 
 // lazy loaded containers and components
+const Home = lazy(() => import('../containers/home.container'));
 const Notfound = lazy(() => import('../components/404.component'));
 const TodoApp = lazy(() => import('../containers/todo.container'));
 const VirtualKeyboard = lazy(() => import('../containers/keyboard.container'));
@@ -19,11 +19,10 @@ const Login = lazy(() => import('../components/login.component'));
 // root app component
 class App extends Component {
   render() {
-    console.log('app', this.props);
     return (
       <Router>
         <React.Fragment>
-          <Navigation />
+          <Navigation {...this.props} />
           <div className="container-fluid p-3">
             <Suspense fallback={<Spinner />}>
               <Switch>
